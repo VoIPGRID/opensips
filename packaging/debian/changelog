@@ -1,3 +1,9 @@
+opensips (2.4.4-1vg1~deb9) stable; urgency=low
+
+  * Build agains libssl1.0-dev not libssl-dev.
+
+ -- Jasper Hafkenscheid <jasper.hafkenscheid@voipgrid.nl>  Mon, 21 Jan 2019 14:54:07 +0100
+
 opensips (2.4.4-1) stable; urgency=low
 
   * Minor Public Release.
