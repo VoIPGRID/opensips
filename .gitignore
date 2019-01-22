@@ -11,6 +11,7 @@ cscope*
 /lex.yy.c
 /opensips
 /debian
+/output
 /curses.out
 /.svnrevision
 /.gitrevision
