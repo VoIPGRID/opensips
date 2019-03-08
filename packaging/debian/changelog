@@ -11,6 +11,11 @@ opensips (2.4.6-1) stable; urgency=low
 
  -- Razvan Crainea <razvan@opensips.org>  Tue, 11 Jun 2019 17:52:58 +0300
 
+opensips (2.4.5-1vg1~deb9) stable; urgency=low
+
+  * Build against libssl1.0-dev not libssl-dev.
+
+ -- Jasper Hafkenscheid <jasper.hafkenscheid@voipgrid.nl>  Fri, 08 Mar 2019 10:50:47 +0100
 
 opensips (2.4.5-1) stable; urgency=low
 
