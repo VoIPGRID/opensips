@@ -11,7 +11,7 @@ RUN apt-get install --yes --no-install-recommends \
 	equivs\
 	init-system-helpers
 
-ARG VER=2.4.4
+ARG VER=2.4.5
 ARG VGVER=1vg1~deb9
 
 ADD . /opensips-$VER
