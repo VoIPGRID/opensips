@@ -12,7 +12,7 @@ RUN apt-get install --yes --no-install-recommends \
 	init-system-helpers
 
 ARG VER=2.4.5
-ARG VGVER=1vg1~deb9
+ARG VGVER=1vg2~deb9
 
 ADD . /opensips-$VER
 WORKDIR /opensips-$VER
