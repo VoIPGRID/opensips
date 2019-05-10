@@ -3,6 +3,11 @@ opensips (2.4.6-1) stable; urgency=low
   * Minor Public Release.
 
  -- Razvan Crainea <razvan@opensips.org>  Tue, 11 Jun 2019 17:52:58 +0300
+opensips (2.4.5-1vg2~deb9) stable; urgency=low
+
+  * Cherry-picked 'usrloc: make next_hop point within the shared buffer'
+
+ -- Jasper Hafkenscheid <jasper.hafkenscheid@voipgrid.nl>  Fri, 10 May 2019 15:07:15 +0200
 
 opensips (2.4.5-1vg1~deb9) stable; urgency=low
 
