@@ -17,6 +17,19 @@ opensips (2.4.6-1) stable; urgency=low
   * Minor Public Release.
 
  -- Razvan Crainea <razvan@opensips.org>  Tue, 11 Jun 2019 17:52:58 +0300
+
+opensips (2.4.5-1vg3~deb9) stable; urgency=low
+
+  * usrloc: Fix compiler warning
+  * Work around a few poor compiler warnings (wdoekes)
+  * usrloc: fix next hop compute for usrloc with DB
+  * usrloc: fix warnings from casting pointers to uint64
+  * tls_mgm: make sure pthread locking has SHARED support
+  * Fix collision in local To-tag generation.
+  * Removed forced openssl 1.0 dependency
+
+ -- Jasper Hafkenscheid <jasper.hafkenscheid@voipgrid.nl>  Mon, 03 Jun 2019 11:34:58 +0200
+
 opensips (2.4.5-1vg2~deb9) stable; urgency=low
 
   * Cherry-picked 'usrloc: make next_hop point within the shared buffer'
