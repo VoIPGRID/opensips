@@ -2,3 +2,4 @@
 /build_docker.sh
 /Dockerfile
 /output
+/.vscode
