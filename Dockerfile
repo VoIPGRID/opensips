@@ -14,11 +14,13 @@ RUN apt-get install --yes --no-install-recommends \
 ARG VER=2.4.5
 ARG VGVER=1vg2~deb9
 
-ADD . /opensips-$VER
-WORKDIR /opensips-$VER
+RUN mkdir -p /opensips-$VER/packaging/debian
+ADD packaging/debian /opensips-$VER/packaging/debian
 
-# Install build dependencies based on control file.
+WORKDIR /opensips-$VER
 RUN mk-build-deps --install --tool='apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes' packaging/debian/control
+
+ADD . /opensips-$VER
 RUN rm opensips-build-deps_$VER-${VGVER}_amd64.deb
 
 # Save a source tar-gz and make the deb packages
