@@ -4,6 +4,13 @@ opensips (2.4.6-1) stable; urgency=low
 
  -- Razvan Crainea <razvan@opensips.org>  Tue, 11 Jun 2019 17:52:58 +0300
 
+opensips (2.4.5-1vg5~deb9) stable; urgency=low
+
+  * reverted 'tls_mgm: make sure pthread locking has SHARED support'
+  * Forced compilation against libssl 1.0 using debian control
+
+ -- Jasper Hafkenscheid <jasper.hafkenscheid@voipgrid.nl>  Wed, 05 Jun 2019 08:36:22 +0200
+
 opensips (2.4.5-1vg3~deb9) stable; urgency=low
 
   * usrloc: Fix compiler warning
