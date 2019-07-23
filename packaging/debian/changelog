@@ -1,3 +1,9 @@
+opensips (2.4.6-1vg1~deb9) stable; urgency=low
+
+  * Rebase on upstream 2.4.6 with our libssl1.0 patch.
+
+ -- Jasper Hafkenscheid <jasper.hafkenscheid@voipgrid.nl>  Tue, 23 Jul 2019 14:40:49 +0200
+
 opensips (2.4.6-1) stable; urgency=low
 
   * Minor Public Release.

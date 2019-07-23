@@ -11,7 +11,7 @@ RUN apt-get install --yes --no-install-recommends \
 	equivs\
 	init-system-helpers
 
-ARG VER=2.4.5
+ARG VER=2.4.6
 
 RUN mkdir -p /opensips-$VER/packaging/debian
 ADD packaging/debian /opensips-$VER/packaging/debian
@@ -25,4 +25,4 @@ RUN rm opensips-build-deps_$VER-${VGVER}_amd64.deb
 
 # Save a source tar-gz and make the deb packages
 RUN tar -czf /opensips_$VER.orig.tar.gz -C / opensips-$VER
-RUN make deb 
+RUN make deb
