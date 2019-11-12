@@ -4,6 +4,12 @@ opensips (2.4.7-1) stable; urgency=low
 
  -- Razvan Crainea <razvan@opensips.org>  Tue, 28 Jan 2020 17:31:05 +0200
 
+opensips (2.4.6-1vg2~deb9) stable; urgency=low
+
+  * Added patch for presence federation cluster publish replication.
+
+ -- Lucas Mendes <lucas.mendes@voipgrid.nl>  Tue, 12 Nov 2019 15:37:48 +0100
+
 opensips (2.4.6-1vg1~deb9) stable; urgency=low
 
   * Rebase on upstream 2.4.6 with our libssl1.0 patch.
