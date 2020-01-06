@@ -18,6 +18,12 @@ opensips (2.4.7-1) stable; urgency=low
 
  -- Razvan Crainea <razvan@opensips.org>  Tue, 28 Jan 2020 17:31:05 +0200
 
+opensips (2.4.6-1vg3~deb9) stable; urgency=low
+
+  * Added patch to avoid bin tcp connection ASYNC_WRITE2 to go crit.
+
+ -- Lucas Mendes <lucas.mendes@voipgrid.nl>  Mon, 6 Jan 2020 11:04:47 +0100
+
 opensips (2.4.6-1vg2~deb9) stable; urgency=low
 
   * Added patch for presence federation cluster publish replication.
