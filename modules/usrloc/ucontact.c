@@ -652,6 +652,7 @@ out_err:
 int db_update_ucontact(ucontact_t* _c)
 {
 	static db_ps_t my_ps = NULL;
+	db_key_t keys1[1];
 	db_val_t vals1[1];
 	db_key_t keys2[15];
 	db_val_t vals2[15];
@@ -765,7 +766,7 @@ int db_update_ucontact(ucontact_t* _c)
 
 	CON_PS_REFERENCE(ul_dbh) = &my_ps;
 
-	if (ul_dbf.insert_update(ul_dbh, keys2, vals2, 15)<0) {
+	if (ul_dbf.update(ul_dbh, keys1, 0, vals1, keys2, vals2, 1, 15)<0) {
 		LM_ERR("updating database failed\n");
 		goto out_err;
 	}
