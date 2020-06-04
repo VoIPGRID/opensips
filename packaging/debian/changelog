@@ -1,3 +1,10 @@
+opensips (2.4.6-1vg4~dev9) stable; urgency=low
+
+  * Cherrypicked hep ipv6 patch by Wdoekes
+  * Patch to use insert or update for usrloc writes
+
+ -- Jasper Hafkenscheid <jasper.hafkenscheid@voipgrid.nl>  Thu, 14 May 2020 14:06:37 +0200
+
 opensips (2.4.6-1vg3~deb9) stable; urgency=low
 
   * Added patch to avoid bin tcp connection ASYNC_WRITE2 to go crit.
