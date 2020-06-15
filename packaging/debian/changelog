@@ -5,6 +5,12 @@ opensips (2.4.8-1) stable; urgency=low
  -- Razvan Crainea <razvan@opensips.org>  Tue, 30 Jun 2020 14:15:32 +0300
 
 
+opensips (2.4.7-1vg1~deb9) stable; urgency=low
+
+  * Fix version suffix dev9 -> deb9
+
+ -- Jasper Hafkenscheid <jasper.hafkenscheid@voipgrid.nl>  Mon, 15 Jun 2020 09:50:51 +0200
+
 opensips (2.4.7-1vg1~dev9) stable; urgency=low
 
   * Rebase on upstream 2.4.7
