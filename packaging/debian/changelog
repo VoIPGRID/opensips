@@ -1,3 +1,9 @@
+opensips (2.4.8-1vg1~deb9) stable; urgency=low
+
+  * Rebased on upstream 2.4.8
+
+ -- Jasper Hafkenscheid <jasper.hafkenscheid@voipgrid.nl>  Fri, 28 Aug 2020 13:04:27 +0200
+
 opensips (2.4.8-1) stable; urgency=low
 
   * Minor Public Release.
