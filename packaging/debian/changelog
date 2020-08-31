@@ -1,3 +1,9 @@
+opensips (2.4.8-1vg2~deb9) stable; urgency=low
+
+  * Patch for get_domain_db_ucontacts next_hop by Walter Doekes.
+
+ -- Jasper Hafkenscheid <jasper.hafkenscheid@voipgrid.nl>  Mon, 31 Aug 2020 09:35:10 +0200
+
 opensips (2.4.8-1vg1~deb9) stable; urgency=low
 
   * Rebased on upstream 2.4.8

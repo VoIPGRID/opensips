@@ -121,7 +121,7 @@ static int get_domain_db_ucontacts(udomain_t *d, void *buf, int *len,
 	db_res_t *res = NULL;
 	db_row_t *row;
 	db_val_t *val;
-	str uri, host, flag_list;
+	str flag_list;
 	int i, no_rows = 10;
 	time_t now;
 	char *p, *p1;
@@ -130,6 +130,7 @@ static int get_domain_db_ucontacts(udomain_t *d, void *buf, int *len,
 	int needed;
 	int shortage = 0;
 	uint64_t contact_id;
+	void *record_start;
 
 	/* Reserve space for terminating 0000 */
 	if (zero_end)
@@ -253,13 +254,36 @@ static int get_domain_db_ucontacts(udomain_t *d, void *buf, int *len,
 				continue;
 			}
 
+			/* We cannot add items that point to p or p1 here,
+			 * unless they point into the buffer we're keeping.
+			 * So: we write to buf, but keep a pointer to the
+			 * start, so we can revert this record if needed. */
+			record_start = buf;
+
+			/* write received/contact */
+			memcpy(buf, &p_len, sizeof p_len);
+			buf += sizeof p_len;
+			memcpy(buf, p, p_len);
+			p = buf; /* point to to-be-kept copy of p */
+			buf += p_len;
+
+			/* write path */
+			memcpy(buf, &p1_len, sizeof p1_len);
+			buf += sizeof p1_len;
+			memcpy(buf, p1, (unsigned)p1_len);
+			p1 = buf; /* point to to-be-kept copy of p1 */
+			buf += p1_len;
+
 			/* determine and parse the URI of this contact's next hop */
 			if (p1_len > 0) {
 				/* send to first URI in path */
+				str uri, host;
 				host.s   = p1;
 				host.len = p1_len;
 				if (get_path_dst_uri(&host, &uri) < 0) {
 					LM_ERR("failed to get dst_uri for Path\n");
+					/* revert writing this record, continue with next */
+					buf = record_start;
 					continue;
 				}
 				if (parse_uri(uri.s, uri.len, &puri) < 0) {
@@ -275,23 +299,12 @@ static int get_domain_db_ucontacts(udomain_t *d, void *buf, int *len,
 				}
 			}
 
-			/* write received/contact */
-			memcpy(buf, &p_len, sizeof p_len);
-			buf += sizeof p_len;
-			memcpy(buf, p, p_len);
-			buf += p_len;
-
-			/* write path */
-			memcpy(buf, &p1_len, sizeof p1_len);
-			buf += sizeof p1_len;
-			memcpy(buf, p1, (unsigned)p1_len);
-			buf += p1_len;
-
 			/* sock */
 			p  = (char*)VAL_STRING(ROW_VALUES(row) + 2);
 			if (VAL_NULL(ROW_VALUES(row)+2) || !p || *p == '\0') {
 				sock = NULL;
 			} else {
+				str host;
 				if (parse_phostport(p, strlen(p), &host.s, &host.len,
 				    &port, &proto) != 0) {
 					LM_ERR("bad socket <%s>...ignoring\n", p);
@@ -312,9 +325,8 @@ static int get_domain_db_ucontacts(udomain_t *d, void *buf, int *len,
 			memset(&next_hop, 0, sizeof next_hop);
 			next_hop.port  = puri.port_no;
 			next_hop.proto = puri.proto;
-			/* re-point next hop inside buffer */
 			next_hop.name.len  = puri.host.len;
-			next_hop.name.s  = puri.host.s;
+			next_hop.name.s  = puri.host.s; /* point into buffer already */
 
 			/* write the next hop */
 			memcpy(buf, &next_hop, sizeof next_hop);
