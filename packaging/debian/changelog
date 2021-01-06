@@ -1,3 +1,9 @@
+opensips (2.4.9-1vg2~deb9) stable; urgency=low
+
+  * Reload dispatcher state on ds_reload command patch.
+
+ -- Lucas Mendes <lucas.mendes@voipgrid.nl>  Wed, 6 Jan 2021 14:18:32 +0100
+
 opensips (2.4.9-1vg1~deb9) stable; urgency=low
 
   * Rebased on upsteam 2.4.9
