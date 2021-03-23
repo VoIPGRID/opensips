@@ -11,6 +11,12 @@ opensips (3.1.2-1) stable; urgency=low
 
  -- Liviu Chircu <liviu@opensips.org>  Thu, 06 May 2021 16:37:16 +0300
 
+opensips (3.1.1-1vg1) stable; urgency=low
+
+  * Patch HEP processing for forwarded messages eee990d84a818352a2b653bfab96e7aa9e529072
+  * Patch usrloc delete contact 18932e3db8fcb3892d6da6dcbce5517dd8ea529a
+
+ -- Jasper Hafkenscheid <jasper.hafkenscheid@wearspindle.com>  Tue, 23 Mar 2021 11:30:00 +0100
 
 opensips (3.1.1-1) stable; urgency=low
 
