@@ -12,6 +12,9 @@ RUN apt-get install --yes --no-install-recommends \
 	init-system-helpers
 
 
+ARG VER
+ARG VGVER
+
 RUN mkdir -p /opensips-$VER/packaging/debian
 ADD packaging/debian /opensips-$VER/packaging/debian
 
