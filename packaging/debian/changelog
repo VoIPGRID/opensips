@@ -1,3 +1,9 @@
+opensips (3.1.3-1vg2) stable; urgency=low
+
+  * Include fix for memory leak in pua_dialoginfo
+
+ -- Jasper Hafkenscheid <jasper.hafkenscheid@wearespindle.com>  Wed, 07 Jul 2021 09:59:32 +0200
+
 opensips (3.1.3-1vg1) stable; urgency=low
 
   * Include patch from 2.4.9 for usrloc insert or update sql.
